@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-8">
-            <h1>Conversor de Temperatura</h1>
+            <h1>🌡️ Conversor de Temperatura</h1>
         </div>
     </div>
     <div class="row">
@@ -11,9 +11,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4">
-            <p>Convertir Temperatura a °F: {{ setTempF }}</p>
-            <p>Convertir Temperatura a °K: {{ setTempK }}</p>
+        <div class="col-2">
+            <p>Convertir Temperatura a °F:</p>
+            <p>Convertir Temperatura a °K:</p>
+        </div>
+        
+        <div class="col-1">
+            <p :style="{color:setTxtColor(setTempF)}">{{ setTempF }}</p>
+            <p :style="{color:setTxtColor(setTempK)}">{{ setTempK }}</p>
         </div>
     </div>
 </template>
@@ -24,7 +29,9 @@ export default {
     name: 'Conversor',
     data() {
         return {
-            tempC: 1,
+            tempC: null,
+            txtColorF: '',
+            txtColorK: '',
         }
     },
     computed: {
@@ -36,18 +43,22 @@ export default {
             },
     },
     methods: {
-    }
+        setTxtColor(temp){
+                let color = 'red'
+                if(temp<=0){
+                    color = 'blue'
+                    } else if(temp > 0 && temp < 15){
+                        color ='magenta'
+                        }
+                return color
+            }
+        }
     }
 </script>
 
 <style scoped>
-input, h4, #card-container,.alert{
+input, h4, p{
     margin-left: 15px;
-    margin-bottom: 15px;
-}
-
-h1 {
-    margin-left: 15px;
-    margin-bottom: 35px
+    margin-bottom: 10px;
 }
 </style>
