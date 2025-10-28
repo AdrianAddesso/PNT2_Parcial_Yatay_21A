@@ -1,24 +1,23 @@
 <template>
     <div class="row">
-        <div class="col-8">
+        <div class="col-6">
             <h1>🌡️ Conversor de Temperatura</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-4">
+        <div class="col-6">
             <h4>Ingrese Temperatura °C</h4>
-            <input type="text" class="form-control" v-model.trim.number="tempC"></input>
+            <input type="number" class="form-control" v-model.trim.number="tempC" placeholder="0"></input>
         </div>
     </div>
     <div class="row">
-        <div class="col-2">
-            <p>Convertir Temperatura a °F:</p>
-            <p>Convertir Temperatura a °K:</p>
-        </div>
-        
-        <div class="col-1">
-            <p :style="{color:setTxtColor(setTempF)}">{{ setTempF }}</p>
-            <p :style="{color:setTxtColor(setTempK)}">{{ setTempK }}</p>
+        <div class="col-6">
+            <p>👉 Convertir Temperatura a °F:
+                <span :style="{color:setTxtColor(setTempF)}">{{ setTempF }}</span>
+            </p>
+            <p>👉 Convertir Temperatura a °K:
+                <span :style="{color:setTxtColor(setTempK)}">{{ setTempK }}</span>
+            </p>
         </div>
     </div>
 </template>
@@ -29,17 +28,17 @@ export default {
     name: 'Conversor',
     data() {
         return {
-            tempC: null,
+            tempC: 0,
             txtColorF: '',
             txtColorK: '',
         }
     },
     computed: {
             setTempF() {
-                return this.tempC * 2
+                return (this.tempC * 9/5) + 32
             },
             setTempK() {
-                return this.tempC * 10
+                return this.tempC + 273.15
             },
     },
     methods: {

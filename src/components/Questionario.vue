@@ -9,7 +9,7 @@
                 <ol>
                     <li><b>C</b> (@click)</li>
                     <li><b>C</b> (Los espacios adelante y atrás en una entrada de texto)</li>
-                    <li><b>A</b>(Definir el path y el componente activo para esa ruta)</li>
+                    <li><b>A</b> (Definir el path y el componente activo para esa ruta)</li>
                 </ol>
             </div>
         </div>
