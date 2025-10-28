@@ -15,21 +15,6 @@
         </div>
 </template>
 
-
-<script>
-export default {
-    name: 'Respuestas',
-    data() {
-        return {
-        }
-    },
-    computed: {
-    },
-    methods: {
-    }
-    }
-</script>
-
 <style scoped>
 li{
     margin-bottom: 10px;
